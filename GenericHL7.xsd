@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+****************************************************************** 
+* 
+* The schemas contained in this document are reproduced with the express permission of 
+* Health Level Seven (R) International. ALL RIGHTS RESERVED.
+*  
+* The schemas contain material derived from HL7 standards. 
+* HL7 standards can be obtained from the HL7 website: www.HL7.org
+*
+* Health Level Seven International and IBM hereby grant permission, to those obtaining 
+* a copy of these materials, to use, copy and modify the materials solely for use with DFDL processors.
+* THESE MATERIALS ARE PROVIDED AS IS WITH NO WARRANTIES OF ANY KIND.  
+*
+* Copyright © 1999-2011, Health Level Seven.
+*
+* © Copyright International Business Machines Corporation, 2013. 
+*
+************************************************************************
+*
+* Version 1.0 	GenericHL7.xsd
+*
+* This DFDL schema is one of a set of schemas that model HL7 v2.7.
+* It provides a DFDL-annotated element to model an HL7 message in a generic manner. 
+* The generic HL7 message consists of an MSH segment followed by any number
+* of other HL7 segments or user-defined Z segments.   
+* 
+************************************************************************* 
+-->
+<xsd:schema elementFormDefault="qualified" targetNamespace="urn:hl7-org:v2xml" xmlns="urn:hl7-org:v2xml" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:hl7="urn:hl7-org:v2xml" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:ibmhl7="http://www.ibm.com/dfdl/HL7Format" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+
+    <xsd:import namespace="http://www.ibm.com/dfdl/HL7Format" schemaLocation="HL7Format.xsd"/>
+    <xsd:include schemaLocation="segments.xsd"/>
+
+    <xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format ref="ibmhl7:HL7Format"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+    <xsd:element dfdl:emptyValueDelimiterPolicy="initiator" ibmSchExtn:docRoot="true" name="HL7">
+		    	<xsd:complexType>
+		    		<xsd:sequence>
+		    			<xsd:element ref="MSH"/>
+		    			<xsd:element maxOccurs="unbounded" minOccurs="0" ref="anyHL7Segment"/>
+		    		</xsd:sequence>
+		    	</xsd:complexType> 
+    		</xsd:element>
+
+</xsd:schema>

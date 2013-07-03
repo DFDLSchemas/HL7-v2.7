@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+****************************************************************** 
+* 
+* The schemas contained in this document are reproduced with the express permission of 
+* Health Level Seven (R) International. ALL RIGHTS RESERVED.
+*  
+* The schemas contain material derived from HL7 standards. 
+* HL7 standards can be obtained from the HL7 website: www.HL7.org
+*
+* Health Level Seven International and IBM hereby grant permission, to those obtaining 
+* a copy of these materials, to use, copy and modify the materials solely for use with DFDL processors.
+* THESE MATERIALS ARE PROVIDED AS IS WITH NO WARRANTIES OF ANY KIND.  
+*
+* Copyright © 1999-2011, Health Level Seven.
+*
+* © Copyright International Business Machines Corporation, 2013. 
+*
+************************************************************************
+*
+* Version 1.0     HL7Format.xsd 
+* 
+* This DFDL schema is one of a set of schemas that model HL7 v2.7.
+* It provides a set of DFDL property values and other DFDL constructs to 
+* assist in the creation of DFDL schemas that model HL7 V2.7 data. 
+* 
+* Example use: 
+* 
+* <xsd:import namespace="http://www.ibm.com/dfdl/HL7Format" schemaLocation="HL7Format.xsd"/> 
+*
+* This schema assumes that the standard HL7 delimiters are used (|^~/&).
+* If you want to use the delimiters defined in the MSH, uncomment the 
+* dfdl:format annotations as indicated below.
+* 
+******************************************************************* 
+-->
+<xsd:schema targetNamespace="http://www.ibm.com/dfdl/HL7Format" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:tns="http://www.ibm.com/dfdl/HL7" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+
+	<xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+
+			<!-- Defaults for DFDL properties suitable for HL7 -->
+			<dfdl:defineFormat name="HL7Format">
+				<dfdl:format alignment="1" alignmentUnits="bytes" binaryFloatRep="ieee" byteOrder="bigEndian" calendarCenturyStart="53" calendarCheckPolicy="lax" calendarDaysInFirstWeek="4" calendarFirstDayOfWeek="Monday" calendarLanguage="en-US" calendarObserveDST="yes" calendarPattern="yyyy-MM-dd'T'HH:mm:ss" calendarPatternKind="implicit" calendarTimeZone="UTC" choiceLengthKind="implicit" decimalSigned="yes" documentFinalTerminatorCanBeMissing="yes" emptyValueDelimiterPolicy="none" encoding="US-ASCII" escapeSchemeRef="" fillByte="0" floating="no" ignoreCase="no" initiatedContent="no" initiator="" leadingSkip="0" lengthKind="delimited" lengthUnits="characters" nilValueDelimiterPolicy="none" occursCountKind="implicit" outputNewLine="%CR;" representation="text" separator="" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" terminator="" textBidi="no" textBooleanFalseRep="false" textBooleanJustification="left" textBooleanPadCharacter="%SP;" textBooleanTrueRep="true" textCalendarJustification="left" textCalendarPadCharacter="%SP;" textNumberCheckPolicy="lax" textNumberJustification="right" textNumberPadCharacter="%SP;" textNumberRep="standard" textNumberRounding="pattern" textNumberRoundingMode="roundUp" textPadKind="none" textStandardBase="10" textStandardDecimalSeparator="." textStandardExponentCharacter="E" textStandardGroupingSeparator="," textStandardInfinityRep="Inf" textStandardNaNRep="NaN" textStandardZeroRep="" textStringJustification="left" textStringPadCharacter="%SP;" textTrimKind="padChar" textZonedSignStyle="asciiStandard" trailingSkip="0" truncateSpecifiedLengthString="no">
+				</dfdl:format>
+			</dfdl:defineFormat>
+
+			<!-- Variables used to store the values of delimiters from the MSH -->
+			<dfdl:defineVariable defaultValue="|" name="FieldSep" type="xsd:string"/> 
+			<dfdl:defineVariable defaultValue="^" name="CompSep" type="xsd:string"/> 
+			<dfdl:defineVariable defaultValue="&amp;" name="SubCompSep" type="xsd:string"/> 
+			<dfdl:defineVariable defaultValue="~" name="RepeatSep" type="xsd:string"/> 
+			<dfdl:defineVariable defaultValue="\" name="EscapeSep" type="xsd:string"/> 
+
+			<!-- Segment terminator can be any recognised new line characters -->			
+			<dfdl:defineFormat name="HL7SegmentTerminator">
+				<dfdl:format terminator="%NL;" emptyValueDelimiterPolicy="both"/>
+			</dfdl:defineFormat>
+
+			<!-- To handle alternative HL7 field separator, uncomment the second dfdl:format and comment the first dfdl:format -->	
+			<dfdl:defineFormat name="HL7Segment">
+				<dfdl:format separator="|" separatorPolicy="suppressedAtEndLax" separatorPosition="prefix" sequenceKind="ordered" />
+			    <!-- <dfdl:format separator="{$ibmhl7:FieldSep}" separatorPolicy="suppressedAtEndLax" separatorPosition="prefix" sequenceKind="ordered" /> -->
+			</dfdl:defineFormat>
+
+			<!-- To handle alternative HL7 component separator uncomment the second dfdl:format and comment the first dfdl:format -->	
+			<dfdl:defineFormat name="HL7Component">
+				<dfdl:format separator="^" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" />
+				<!-- <dfdl:format separator="{$ibmhl7:CompSep}" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" /> -->
+			</dfdl:defineFormat>
+
+			<!-- To handle alternative HL7 sub-component separator uncomment the second dfdl:format and comment the first dfdl:format -->	
+			<dfdl:defineFormat name="HL7SubComponent">
+				<dfdl:format separator="&amp;" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" />
+				<!-- <dfdl:format separator="{$ibmhl7:SubCompSep}" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" /> -->
+			</dfdl:defineFormat>
+
+			<!-- To handle alternative HL7 repeat separator uncomment the second dfdl:format and comment the first dfdl:format -->	
+			<dfdl:defineFormat name="HL7Repeat">
+				<dfdl:format separator="~" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" /> 
+				<!-- <dfdl:format separator="{$ibmhl7:RepeatSep}" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" /> -->
+			</dfdl:defineFormat>
+			
+			<!-- To handle alternative HL7 escape character uncomment the second dfdl:format and comment the first dfdl:format -->	
+			<dfdl:defineFormat name="HL7EscapeCharacter">
+				<dfdl:format separator="\" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" />
+				<!-- <dfdl:format separator="{$ibmhl7:EscapeSep}" separatorPolicy="suppressedAtEndLax" separatorPosition="infix" sequenceKind="ordered" /> -->
+			</dfdl:defineFormat>
+
+		</xsd:appinfo>
+	</xsd:annotation>
+	
+</xsd:schema>

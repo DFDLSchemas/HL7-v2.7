@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+****************************************************************** 
+* 
+* The schemas contained in this document are reproduced with the express permission of 
+* Health Level Seven (R) International. ALL RIGHTS RESERVED.
+*  
+* The schemas contain material derived from HL7 standards. 
+* HL7 standards can be obtained from the HL7 website: www.HL7.org
+*
+* Health Level Seven International and IBM hereby grant permission, to those obtaining 
+* a copy of these materials, to use, copy and modify the materials solely for use with DFDL processors.
+* THESE MATERIALS ARE PROVIDED AS IS WITH NO WARRANTIES OF ANY KIND.  
+*
+* Copyright © 1999-2011, Health Level Seven.
+*
+* © Copyright International Business Machines Corporation, 2013. 
+*
+************************************************************************
+*
+* Version 1.0 	datatypes.xsd
+*
+* This DFDL schema is one of a set of schemas that model HL7 v2.7.
+* It provides a set of DFDL-annotated types and groups for HL7 data types.   
+* 
+* To use the schema in another HL7 DFDL schema: 
+*   <xs:include schemaLocation="datatypes.xsd"/>
+*
+************************************************************************* 
+-->
+<xsd:schema elementFormDefault="qualified" targetNamespace="urn:hl7-org:v2xml" xmlns="urn:hl7-org:v2xml" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:hl7="urn:hl7-org:v2xml" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:ibmhl7="http://www.ibm.com/dfdl/HL7Format" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+    <xsd:import namespace="http://www.ibm.com/dfdl/HL7Format" schemaLocation="HL7Format.xsd"/>
+
+    <xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format ref="ibmhl7:HL7Format"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+    <xsd:complexType name="AD">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="AD_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="AUI">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AUI.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AUI.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AUI.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CCD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CCD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CCD.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CCP">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CCP_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CD.6"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CF">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CF.22"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CNE">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CNE_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CNN">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CNN_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CP.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CP.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CP.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CP.6"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CQ">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CQ_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CSU">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CSU_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CWE">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CWE_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="CX">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CX.12"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DDI">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DDI.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DDI.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DDI.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DIN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DIN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DIN.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DLD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DLD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLD.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DLN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DLN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLN.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DLT">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLT.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLT.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLT.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DLT.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DR">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="DR_Group"/>
+    </xsd:complexType>
+    <xsd:simpleType name="DT">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="DTM">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="DTN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DTN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="DTN.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ED">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ED.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ED.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ED.3"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ED.4"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ED.5"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="EI">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="EI_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="EIP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EIP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EIP.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ERL">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ERL.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ERL.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ERL.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ERL.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ERL.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ERL.6"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="FC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="FC.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FN">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="FN_Group"/>
+    </xsd:complexType>
+    <xsd:simpleType name="FT">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="GTS">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="HD">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="HD_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="ICD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ICD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ICD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ICD.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="ID">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="IS">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="JCC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="JCC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="JCC.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="JCC.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LA1">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA1.9"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LA2">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="LA2.16"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MA">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MA.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MA.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MA.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MA.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MO">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="MO_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="MOC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MOC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MOC.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MOP">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="MOP_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="MSG">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="MSG.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="MSG.2"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="MSG.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="NA">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NA.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NA.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NA.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NA.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="NDL">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NDL.11"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="NM">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="NR">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="NR_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="OCD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="OCD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="OCD.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="OSP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="OSP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="OSP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="OSP.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PIP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PIP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PIP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PIP.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PIP.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PIP.5"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PL">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PL.11"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PLN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PLN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PLN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PLN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PLN.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PPN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.22"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.23"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.24"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.25"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PPN.26"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PRL">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PRL.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PRL.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PRL.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PT">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PT.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PT.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PTA">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PTA.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PTA.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="PTA.3"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="PTA.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="QIP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="QIP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="QIP.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="QSC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="QSC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="QSC.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="QSC.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="QSC.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RCD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RCD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RCD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RCD.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RFR">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="RFR.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RFR.7"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RI">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="RI_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="RMC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="RMC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RMC.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RMC.3"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="RMC.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RP">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RP.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RP.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RPT">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="RPT.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RPT.11"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SAD">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="SAD_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="SCV">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SCV.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SCV.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="SI">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="SN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SN.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="SNM">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="SPD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="SPD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SPD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SPD.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SPD.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SRT">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="SRT.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SRT.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="ST">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="TM">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="TX">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="UVC">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="UVC.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="UVC.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="UVC.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="UVC.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VH">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VH.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VH.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VH.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VH.4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VID">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="1" ref="VID.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VID.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VID.3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VR">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VR.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="VR.2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="WVI">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="WVI_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="WVS">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="WVS_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="XAD">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.22"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XAD.23"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="XCN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.22"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.23"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.24"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XCN.25"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Remainder" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="XON">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XON.10"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="XPN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XPN.15"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="XTN">
+        <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="XTN.18"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="AD.1" type="ST"/>
+    <xsd:element name="AD.2" type="ST"/>
+    <xsd:element name="AD.3" type="ST"/>
+    <xsd:element name="AD.4" type="ST"/>
+    <xsd:element name="AD.5" type="ST"/>
+    <xsd:element name="AD.6" type="ID"/>
+    <xsd:element name="AD.7" type="ID"/>
+    <xsd:element name="AD.8" type="ST"/>
+    <xsd:element name="AUI.1" type="ST"/>
+    <xsd:element name="AUI.2" type="DT"/>
+    <xsd:element name="AUI.3" type="ST"/>
+    <xsd:element name="CCD.1" type="ID"/>
+    <xsd:element name="CCD.2" type="DTM"/>
+    <xsd:element name="CCP.1" type="NM"/>
+    <xsd:element name="CCP.2" type="NM"/>
+    <xsd:element name="CCP.3" type="NM"/>
+    <xsd:element name="CD.1" type="WVI_SubComponent"/>
+    <xsd:element name="CD.2" type="WVS_SubComponent"/>
+    <xsd:element name="CD.3" type="CSU_SubComponent"/>
+    <xsd:element name="CD.4" type="CCP_SubComponent"/>
+    <xsd:element name="CD.5" type="NM"/>
+    <xsd:element name="CD.6" type="NR_SubComponent"/>
+    <xsd:element name="CF.1" type="ST"/>
+    <xsd:element name="CF.2" type="FT"/>
+    <xsd:element name="CF.3" type="ID"/>
+    <xsd:element name="CF.4" type="ST"/>
+    <xsd:element name="CF.5" type="FT"/>
+    <xsd:element name="CF.6" type="ID"/>
+    <xsd:element name="CF.7" type="ST"/>
+    <xsd:element name="CF.8" type="ST"/>
+    <xsd:element name="CF.9" type="ST"/>
+    <xsd:element name="CF.10" type="ST"/>
+    <xsd:element name="CF.11" type="FT"/>
+    <xsd:element name="CF.12" type="ID"/>
+    <xsd:element name="CF.13" type="ST"/>
+    <xsd:element name="CF.14" type="ST"/>
+    <xsd:element name="CF.15" type="ST"/>
+    <xsd:element name="CF.16" type="DTM"/>
+    <xsd:element name="CF.17" type="ST"/>
+    <xsd:element name="CF.18" type="ST"/>
+    <xsd:element name="CF.19" type="DTM"/>
+    <xsd:element name="CF.20" type="ST"/>
+    <xsd:element name="CF.21" type="ST"/>
+    <xsd:element name="CF.22" type="DTM"/>
+    <xsd:element name="CNE.1" type="ST"/>
+    <xsd:element name="CNE.2" type="ST"/>
+    <xsd:element name="CNE.3" type="ID"/>
+    <xsd:element name="CNE.4" type="ST"/>
+    <xsd:element name="CNE.5" type="ST"/>
+    <xsd:element name="CNE.6" type="ID"/>
+    <xsd:element name="CNE.7" type="ST"/>
+    <xsd:element name="CNE.8" type="ST"/>
+    <xsd:element name="CNE.9" type="ST"/>
+    <xsd:element name="CNE.10" type="ST"/>
+    <xsd:element name="CNE.11" type="ST"/>
+    <xsd:element name="CNE.12" type="ID"/>
+    <xsd:element name="CNE.13" type="ST"/>
+    <xsd:element name="CNE.14" type="ST"/>
+    <xsd:element name="CNE.15" type="ST"/>
+    <xsd:element name="CNE.16" type="DTM"/>
+    <xsd:element name="CNE.17" type="ST"/>
+    <xsd:element name="CNE.18" type="ST"/>
+    <xsd:element name="CNE.19" type="DTM"/>
+    <xsd:element name="CNE.20" type="ST"/>
+    <xsd:element name="CNE.21" type="ST"/>
+    <xsd:element name="CNE.22" type="DTM"/>
+    <xsd:element name="CNN.1" type="ST"/>
+    <xsd:element name="CNN.2" type="ST"/>
+    <xsd:element name="CNN.3" type="ST"/>
+    <xsd:element name="CNN.4" type="ST"/>
+    <xsd:element name="CNN.5" type="ST"/>
+    <xsd:element name="CNN.6" type="ST"/>
+    <xsd:element name="CNN.7" type="IS"/>
+    <xsd:element name="CNN.8" type="IS"/>
+    <xsd:element name="CNN.9" type="IS"/>
+    <xsd:element name="CNN.10" type="ST"/>
+    <xsd:element name="CNN.11" type="ID"/>
+    <xsd:element name="CP.1" type="MO_SubComponent"/>
+    <xsd:element name="CP.2" type="ID"/>
+    <xsd:element name="CP.3" type="NM"/>
+    <xsd:element name="CP.4" type="NM"/>
+    <xsd:element name="CP.5" type="CWE_SubComponent"/>
+    <xsd:element name="CP.6" type="ID"/>
+    <xsd:element name="CQ.1" type="NM"/>
+    <xsd:element name="CQ.2" type="CWE_SubComponent"/>
+    <xsd:element name="CSU.1" type="NM"/>
+    <xsd:element name="CSU.2" type="ST"/>
+    <xsd:element name="CSU.3" type="ST"/>
+    <xsd:element name="CSU.4" type="ID"/>
+    <xsd:element name="CSU.5" type="ST"/>
+    <xsd:element name="CSU.6" type="ST"/>
+    <xsd:element name="CSU.7" type="ID"/>
+    <xsd:element name="CSU.8" type="ST"/>
+    <xsd:element name="CSU.9" type="ST"/>
+    <xsd:element name="CSU.10" type="ST"/>
+    <xsd:element name="CSU.11" type="ST"/>
+    <xsd:element name="CSU.12" type="ST"/>
+    <xsd:element name="CSU.13" type="ID"/>
+    <xsd:element name="CSU.14" type="ST"/>
+    <xsd:element name="CSU.15" type="ST"/>
+    <xsd:element name="CSU.16" type="ST"/>
+    <xsd:element name="CSU.17" type="DTM"/>
+    <xsd:element name="CSU.18" type="ST"/>
+    <xsd:element name="CSU.19" type="ST"/>
+    <xsd:element name="CSU.20" type="DTM"/>
+    <xsd:element name="CSU.21" type="ST"/>
+    <xsd:element name="CSU.22" type="ST"/>
+    <xsd:element name="CSU.23" type="ST"/>
+    <xsd:element name="CWE.1" type="ST"/>
+    <xsd:element name="CWE.2" type="ST"/>
+    <xsd:element name="CWE.3" type="ID"/>
+    <xsd:element name="CWE.4" type="ST"/>
+    <xsd:element name="CWE.5" type="ST"/>
+    <xsd:element name="CWE.6" type="ID"/>
+    <xsd:element name="CWE.7" type="ST"/>
+    <xsd:element name="CWE.8" type="ST"/>
+    <xsd:element name="CWE.9" type="ST"/>
+    <xsd:element name="CWE.10" type="ST"/>
+    <xsd:element name="CWE.11" type="ST"/>
+    <xsd:element name="CWE.12" type="ID"/>
+    <xsd:element name="CWE.13" type="ST"/>
+    <xsd:element name="CWE.14" type="ST"/>
+    <xsd:element name="CWE.15" type="ST"/>
+    <xsd:element name="CWE.16" type="DTM"/>
+    <xsd:element name="CWE.17" type="ST"/>
+    <xsd:element name="CWE.18" type="ST"/>
+    <xsd:element name="CWE.19" type="DTM"/>
+    <xsd:element name="CWE.20" type="ST"/>
+    <xsd:element name="CWE.21" type="ST"/>
+    <xsd:element name="CWE.22" type="DTM"/>
+    <xsd:element name="CX.1" type="ST"/>
+    <xsd:element name="CX.2" type="ST"/>
+    <xsd:element name="CX.3" type="ID"/>
+    <xsd:element name="CX.4" type="HD_SubComponent"/>
+    <xsd:element name="CX.5" type="ID"/>
+    <xsd:element name="CX.6" type="HD_SubComponent"/>
+    <xsd:element name="CX.7" type="DT"/>
+    <xsd:element name="CX.8" type="DT"/>
+    <xsd:element name="CX.9" type="CWE_SubComponent"/>
+    <xsd:element name="CX.10" type="CWE_SubComponent"/>
+    <xsd:element name="CX.11" type="ST"/>
+    <xsd:element name="CX.12" type="ID"/>
+    <xsd:element name="DDI.1" type="NM"/>
+    <xsd:element name="DDI.2" type="MO_SubComponent"/>
+    <xsd:element name="DDI.3" type="NM"/>
+    <xsd:element name="DIN.1" type="DTM"/>
+    <xsd:element name="DIN.2" type="CWE_SubComponent"/>
+    <xsd:element name="DLD.1" type="CWE_SubComponent"/>
+    <xsd:element name="DLD.2" type="DTM"/>
+    <xsd:element name="DLN.1" type="ST"/>
+    <xsd:element name="DLN.2" type="CWE_SubComponent"/>
+    <xsd:element name="DLN.3" type="DT"/>
+    <xsd:element name="DLT.1" type="NR_SubComponent"/>
+    <xsd:element name="DLT.2" type="NM"/>
+    <xsd:element name="DLT.3" type="ID"/>
+    <xsd:element name="DLT.4" type="NM"/>
+    <xsd:element name="DR.1" type="DTM"/>
+    <xsd:element name="DR.2" type="DTM"/>
+    <xsd:element name="DTN.1" type="CWE_SubComponent"/>
+    <xsd:element name="DTN.2" type="NM"/>
+    <xsd:element name="ED.1" type="HD_SubComponent"/>
+    <xsd:element name="ED.2" type="ID"/>
+    <xsd:element name="ED.3" type="ID"/>
+    <xsd:element name="ED.4" type="ID"/>
+    <xsd:element name="ED.5" type="TX"/>
+    <xsd:element name="EI.1" type="ST"/>
+    <xsd:element name="EI.2" type="IS"/>
+    <xsd:element name="EI.3" type="ST"/>
+    <xsd:element name="EI.4" type="ID"/>
+    <xsd:element name="EIP.1" type="EI_SubComponent"/>
+    <xsd:element name="EIP.2" type="EI_SubComponent"/>
+    <xsd:element name="ERL.1" type="ST"/>
+    <xsd:element name="ERL.2" type="NM"/>
+    <xsd:element name="ERL.3" type="NM"/>
+    <xsd:element name="ERL.4" type="NM"/>
+    <xsd:element name="ERL.5" type="NM"/>
+    <xsd:element name="ERL.6" type="NM"/>
+    <xsd:element name="FC.1" type="CWE_SubComponent"/>
+    <xsd:element name="FC.2" type="DTM"/>
+    <xsd:element name="FN.1" type="ST"/>
+    <xsd:element name="FN.2" type="ST"/>
+    <xsd:element name="FN.3" type="ST"/>
+    <xsd:element name="FN.4" type="ST"/>
+    <xsd:element name="FN.5" type="ST"/>
+    <xsd:element name="HD.1" type="IS"/>
+    <xsd:element name="HD.2" type="ST"/>
+    <xsd:element name="HD.3" type="ID"/>
+    <xsd:element name="ICD.1" type="CWE_SubComponent"/>
+    <xsd:element name="ICD.2" type="ID"/>
+    <xsd:element name="ICD.3" type="DTM"/>
+    <xsd:element name="JCC.1" type="CWE_SubComponent"/>
+    <xsd:element name="JCC.2" type="CWE_SubComponent"/>
+    <xsd:element name="JCC.3" type="TX"/>
+    <xsd:element name="LA1.1" type="IS"/>
+    <xsd:element name="LA1.2" type="IS"/>
+    <xsd:element name="LA1.3" type="IS"/>
+    <xsd:element name="LA1.4" type="HD_SubComponent"/>
+    <xsd:element name="LA1.5" type="IS"/>
+    <xsd:element name="LA1.6" type="IS"/>
+    <xsd:element name="LA1.7" type="IS"/>
+    <xsd:element name="LA1.8" type="IS"/>
+    <xsd:element name="LA1.9" type="AD_SubComponent"/>
+    <xsd:element name="LA2.1" type="IS"/>
+    <xsd:element name="LA2.2" type="IS"/>
+    <xsd:element name="LA2.3" type="IS"/>
+    <xsd:element name="LA2.4" type="HD_SubComponent"/>
+    <xsd:element name="LA2.5" type="IS"/>
+    <xsd:element name="LA2.6" type="IS"/>
+    <xsd:element name="LA2.7" type="IS"/>
+    <xsd:element name="LA2.8" type="IS"/>
+    <xsd:element name="LA2.9" type="ST"/>
+    <xsd:element name="LA2.10" type="ST"/>
+    <xsd:element name="LA2.11" type="ST"/>
+    <xsd:element name="LA2.12" type="ST"/>
+    <xsd:element name="LA2.13" type="ST"/>
+    <xsd:element name="LA2.14" type="ID"/>
+    <xsd:element name="LA2.15" type="ID"/>
+    <xsd:element name="LA2.16" type="ST"/>
+    <xsd:element name="MA.1" type="NM"/>
+    <xsd:element name="MA.2" type="NM"/>
+    <xsd:element name="MA.3" type="NM"/>
+    <xsd:element name="MA.4" type="NM"/>
+    <xsd:element name="MO.1" type="NM"/>
+    <xsd:element name="MO.2" type="ID"/>
+    <xsd:element name="MOC.1" type="MO_SubComponent"/>
+    <xsd:element name="MOC.2" type="CWE_SubComponent"/>
+    <xsd:element name="MOP.1" type="ID"/>
+    <xsd:element name="MOP.2" type="NM"/>
+    <xsd:element name="MOP.3" type="ID"/>
+    <xsd:element name="MSG.1" type="ID"/>
+    <xsd:element name="MSG.2" type="ID"/>
+    <xsd:element name="MSG.3" type="ID"/>
+    <xsd:element name="NA.1" type="NM"/>
+    <xsd:element name="NA.2" type="NM"/>
+    <xsd:element name="NA.3" type="NM"/>
+    <xsd:element name="NA.4" type="NM"/>
+    <xsd:element name="NDL.1" type="CNN_SubComponent"/>
+    <xsd:element name="NDL.2" type="DTM"/>
+    <xsd:element name="NDL.3" type="DTM"/>
+    <xsd:element name="NDL.4" type="IS"/>
+    <xsd:element name="NDL.5" type="IS"/>
+    <xsd:element name="NDL.6" type="IS"/>
+    <xsd:element name="NDL.7" type="HD_SubComponent"/>
+    <xsd:element name="NDL.8" type="IS"/>
+    <xsd:element name="NDL.9" type="IS"/>
+    <xsd:element name="NDL.10" type="IS"/>
+    <xsd:element name="NDL.11" type="IS"/>
+    <xsd:element name="NR.1" type="NM"/>
+    <xsd:element name="NR.2" type="NM"/>
+    <xsd:element name="OCD.1" type="CNE_SubComponent"/>
+    <xsd:element name="OCD.2" type="DT"/>
+    <xsd:element name="OSP.1" type="CNE_SubComponent"/>
+    <xsd:element name="OSP.2" type="DT"/>
+    <xsd:element name="OSP.3" type="DT"/>
+    <xsd:element name="PIP.1" type="CWE_SubComponent"/>
+    <xsd:element name="PIP.2" type="CWE_SubComponent"/>
+    <xsd:element name="PIP.3" type="DT"/>
+    <xsd:element name="PIP.4" type="DT"/>
+    <xsd:element name="PIP.5" type="EI_SubComponent"/>
+    <xsd:element name="PL.1" type="HD_SubComponent"/>
+    <xsd:element name="PL.2" type="HD_SubComponent"/>
+    <xsd:element name="PL.3" type="HD_SubComponent"/>
+    <xsd:element name="PL.4" type="HD_SubComponent"/>
+    <xsd:element name="PL.5" type="IS"/>
+    <xsd:element name="PL.6" type="IS"/>
+    <xsd:element name="PL.7" type="HD_SubComponent"/>
+    <xsd:element name="PL.8" type="HD_SubComponent"/>
+    <xsd:element name="PL.9" type="ST"/>
+    <xsd:element name="PL.10" type="EI_SubComponent"/>
+    <xsd:element name="PL.11" type="HD_SubComponent"/>
+    <xsd:element name="PLN.1" type="ST"/>
+    <xsd:element name="PLN.2" type="CWE_SubComponent"/>
+    <xsd:element name="PLN.3" type="ST"/>
+    <xsd:element name="PLN.4" type="DT"/>
+    <xsd:element name="PPN.1" type="ST"/>
+    <xsd:element name="PPN.2" type="FN_SubComponent"/>
+    <xsd:element name="PPN.3" type="ST"/>
+    <xsd:element name="PPN.4" type="ST"/>
+    <xsd:element name="PPN.5" type="ST"/>
+    <xsd:element name="PPN.6" type="ST"/>
+    <xsd:element name="PPN.8" type="CWE_SubComponent"/>
+    <xsd:element name="PPN.9" type="HD_SubComponent"/>
+    <xsd:element name="PPN.10" type="ID"/>
+    <xsd:element name="PPN.11" type="ST"/>
+    <xsd:element name="PPN.12" type="ID"/>
+    <xsd:element name="PPN.13" type="ID"/>
+    <xsd:element name="PPN.14" type="HD_SubComponent"/>
+    <xsd:element name="PPN.15" type="DTM"/>
+    <xsd:element name="PPN.16" type="ID"/>
+    <xsd:element name="PPN.17" type="CWE_SubComponent"/>
+    <xsd:element name="PPN.19" type="ID"/>
+    <xsd:element name="PPN.20" type="DTM"/>
+    <xsd:element name="PPN.21" type="DTM"/>
+    <xsd:element name="PPN.22" type="ST"/>
+    <xsd:element name="PPN.23" type="CWE_SubComponent"/>
+    <xsd:element name="PPN.24" type="CWE_SubComponent"/>
+    <xsd:element name="PPN.25" type="ST"/>
+    <xsd:element name="PPN.26" type="ID"/>
+    <xsd:element name="PRL.1" type="CWE_SubComponent"/>
+    <xsd:element name="PRL.2" type="ST"/>
+    <xsd:element name="PRL.3" type="TX"/>
+    <xsd:element name="PT.1" type="ID"/>
+    <xsd:element name="PT.2" type="ID"/>
+    <xsd:element name="PTA.1" type="CWE_SubComponent"/>
+    <xsd:element name="PTA.2" type="CWE_SubComponent"/>
+    <xsd:element name="PTA.4" type="MOP_SubComponent"/>
+    <xsd:element name="QIP.1" type="ST"/>
+    <xsd:element name="QIP.2" type="ST"/>
+    <xsd:element name="QSC.1" type="ST"/>
+    <xsd:element name="QSC.2" type="ID"/>
+    <xsd:element name="QSC.3" type="ST"/>
+    <xsd:element name="QSC.4" type="ID"/>
+    <xsd:element name="RCD.1" type="ST"/>
+    <xsd:element name="RCD.2" type="ID"/>
+    <xsd:element name="RCD.3" type="NM"/>
+    <xsd:element name="RFR.1" type="NR_SubComponent"/>
+    <xsd:element name="RFR.2" type="CWE_SubComponent"/>
+    <xsd:element name="RFR.3" type="NR_SubComponent"/>
+    <xsd:element name="RFR.4" type="NR_SubComponent"/>
+    <xsd:element name="RFR.5" type="ST"/>
+    <xsd:element name="RFR.6" type="ST"/>
+    <xsd:element name="RFR.7" type="TX"/>
+    <xsd:element name="RI.1" type="CWE_SubComponent"/>
+    <xsd:element name="RI.2" type="ST"/>
+    <xsd:element name="RMC.1" type="CWE_SubComponent"/>
+    <xsd:element name="RMC.2" type="CWE_SubComponent"/>
+    <xsd:element name="RMC.4" type="MOP_SubComponent"/>
+    <xsd:element name="RP.1" type="ST"/>
+    <xsd:element name="RP.2" type="HD_SubComponent"/>
+    <xsd:element name="RP.3" type="ID"/>
+    <xsd:element name="RP.4" type="ID"/>
+    <xsd:element name="RPT.1" type="CWE_SubComponent"/>
+    <xsd:element name="RPT.2" type="ID"/>
+    <xsd:element name="RPT.3" type="NM"/>
+    <xsd:element name="RPT.4" type="NM"/>
+    <xsd:element name="RPT.5" type="NM"/>
+    <xsd:element name="RPT.6" type="CWE_SubComponent"/>
+    <xsd:element name="RPT.7" type="ID"/>
+    <xsd:element name="RPT.8" type="ID"/>
+    <xsd:element name="RPT.9" type="NM"/>
+    <xsd:element name="RPT.10" type="CWE_SubComponent"/>
+    <xsd:element name="RPT.11" type="GTS"/>
+    <xsd:element name="SAD.1" type="ST"/>
+    <xsd:element name="SAD.2" type="ST"/>
+    <xsd:element name="SAD.3" type="ST"/>
+    <xsd:element name="SCV.1" type="CWE_SubComponent"/>
+    <xsd:element name="SCV.2" type="ST"/>
+    <xsd:element name="SN.1" type="ST"/>
+    <xsd:element name="SN.2" type="NM"/>
+    <xsd:element name="SN.3" type="ST"/>
+    <xsd:element name="SN.4" type="NM"/>
+    <xsd:element name="SPD.1" type="ST"/>
+    <xsd:element name="SPD.2" type="ST"/>
+    <xsd:element name="SPD.3" type="ID"/>
+    <xsd:element name="SPD.4" type="DT"/>
+    <xsd:element name="SRT.1" type="ST"/>
+    <xsd:element name="SRT.2" type="ID"/>
+    <xsd:element name="UVC.1" type="CWE_SubComponent"/>
+    <xsd:element name="UVC.2" type="MO_SubComponent"/>
+    <xsd:element name="UVC.3" type="NM"/>
+    <xsd:element name="UVC.4" type="CWE_SubComponent"/>
+    <xsd:element name="VH.1" type="ID"/>
+    <xsd:element name="VH.2" type="ID"/>
+    <xsd:element name="VH.3" type="TM"/>
+    <xsd:element name="VH.4" type="TM"/>
+    <xsd:element name="VID.1" type="ID"/>
+    <xsd:element name="VID.2" type="CWE_SubComponent"/>
+    <xsd:element name="VID.3" type="CWE_SubComponent"/>
+    <xsd:element name="VR.1" type="ST"/>
+    <xsd:element name="VR.2" type="ST"/>
+    <xsd:element name="WVI.1" type="NM"/>
+    <xsd:element name="WVI.2" type="ST"/>
+    <xsd:element name="WVS.1" type="ST"/>
+    <xsd:element name="WVS.2" type="ST"/>
+    <xsd:element name="XAD.1" type="SAD_SubComponent"/>
+    <xsd:element name="XAD.2" type="ST"/>
+    <xsd:element name="XAD.3" type="ST"/>
+    <xsd:element name="XAD.4" type="ST"/>
+    <xsd:element name="XAD.5" type="ST"/>
+    <xsd:element name="XAD.6" type="ID"/>
+    <xsd:element name="XAD.7" type="ID"/>
+    <xsd:element name="XAD.8" type="ST"/>
+    <xsd:element name="XAD.9" type="CWE_SubComponent"/>
+    <xsd:element name="XAD.10" type="CWE_SubComponent"/>
+    <xsd:element name="XAD.11" type="ID"/>
+    <xsd:element name="XAD.13" type="DTM"/>
+    <xsd:element name="XAD.14" type="DTM"/>
+    <xsd:element name="XAD.15" type="CWE_SubComponent"/>
+    <xsd:element name="XAD.16" type="ID"/>
+    <xsd:element name="XAD.17" type="ID"/>
+    <xsd:element name="XAD.18" type="ID"/>
+    <xsd:element name="XAD.19" type="ST"/>
+    <xsd:element name="XAD.20" type="ST"/>
+    <xsd:element name="XAD.21" type="NM"/>
+    <xsd:element name="XAD.22" type="CWE_SubComponent"/>
+    <xsd:element name="XAD.23" type="EI_SubComponent"/>
+    <xsd:element name="XCN.1" type="ST"/>
+    <xsd:element name="XCN.2" type="FN_SubComponent"/>
+    <xsd:element name="XCN.3" type="ST"/>
+    <xsd:element name="XCN.4" type="ST"/>
+    <xsd:element name="XCN.5" type="ST"/>
+    <xsd:element name="XCN.6" type="ST"/>
+    <xsd:element name="XCN.8" type="CWE_SubComponent"/>
+    <xsd:element name="XCN.9" type="HD_SubComponent"/>
+    <xsd:element name="XCN.10" type="ID"/>
+    <xsd:element name="XCN.11" type="ST"/>
+    <xsd:element name="XCN.12" type="ID"/>
+    <xsd:element name="XCN.13" type="ID"/>
+    <xsd:element name="XCN.14" type="HD_SubComponent"/>
+    <xsd:element name="XCN.15" type="ID"/>
+    <xsd:element name="XCN.16" type="CWE_SubComponent"/>
+    <xsd:element name="XCN.18" type="ID"/>
+    <xsd:element name="XCN.19" type="DTM"/>
+    <xsd:element name="XCN.20" type="DTM"/>
+    <xsd:element name="XCN.21" type="ST"/>
+    <xsd:element name="XCN.22" type="CWE_SubComponent"/>
+    <xsd:element name="XCN.23" type="CWE_SubComponent"/>
+    <xsd:element name="XCN.24" type="ST"/>
+    <xsd:element name="XCN.25" type="ID"/>
+    <xsd:element name="XON.1" type="ST"/>
+    <xsd:element name="XON.2" type="CWE_SubComponent"/>
+    <xsd:element name="XON.4" type="NM"/>
+    <xsd:element name="XON.5" type="ID"/>
+    <xsd:element name="XON.6" type="HD_SubComponent"/>
+    <xsd:element name="XON.7" type="ID"/>
+    <xsd:element name="XON.8" type="HD_SubComponent"/>
+    <xsd:element name="XON.9" type="ID"/>
+    <xsd:element name="XON.10" type="ST"/>
+    <xsd:element name="XPN.1" type="FN_SubComponent"/>
+    <xsd:element name="XPN.2" type="ST"/>
+    <xsd:element name="XPN.3" type="ST"/>
+    <xsd:element name="XPN.4" type="ST"/>
+    <xsd:element name="XPN.5" type="ST"/>
+    <xsd:element name="XPN.7" type="ID"/>
+    <xsd:element name="XPN.8" type="ID"/>
+    <xsd:element name="XPN.9" type="CWE_SubComponent"/>
+    <xsd:element name="XPN.11" type="ID"/>
+    <xsd:element name="XPN.12" type="DTM"/>
+    <xsd:element name="XPN.13" type="DTM"/>
+    <xsd:element name="XPN.14" type="ST"/>
+    <xsd:element name="XPN.15" type="ST"/>
+    <xsd:element name="XTN.2" type="ID"/>
+    <xsd:element name="XTN.3" type="ID"/>
+    <xsd:element name="XTN.4" type="ST"/>
+    <xsd:element name="XTN.5" type="SNM"/>
+    <xsd:element name="XTN.6" type="SNM"/>
+    <xsd:element name="XTN.7" type="SNM"/>
+    <xsd:element name="XTN.8" type="SNM"/>
+    <xsd:element name="XTN.9" type="ST"/>
+    <xsd:element name="XTN.10" type="ST"/>
+    <xsd:element name="XTN.11" type="ST"/>
+    <xsd:element name="XTN.12" type="ST"/>
+    <xsd:element name="XTN.13" type="DTM"/>
+    <xsd:element name="XTN.14" type="DTM"/>
+    <xsd:element name="XTN.15" type="CWE_SubComponent"/>
+    <xsd:element name="XTN.16" type="CWE_SubComponent"/>
+    <xsd:element name="XTN.17" type="EI_SubComponent"/>
+    <xsd:element name="XTN.18" type="NM"/>
+    <xsd:element name="PPN.7" type="IS"/>
+    <xsd:element name="PPN.18" type="DR_SubComponent"/>
+    <xsd:element name="PTA.3" type="NM"/>
+    <xsd:element name="RMC.3" type="NM"/>
+    <xsd:element name="XAD.12" type="DR_SubComponent"/>
+    <xsd:element name="XCN.7" type="IS"/>
+    <xsd:element name="XCN.17" type="DR_SubComponent"/>
+    <xsd:element name="XON.3" type="NM"/>
+    <xsd:element name="XPN.6" type="IS"/>
+    <xsd:element name="XPN.10" type="DR_SubComponent"/>
+    <xsd:element name="XTN.1" type="xsd:string"/>
+    <xsd:complexType name="CE">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="CE_Group"/>
+    </xsd:complexType>
+    <xsd:element name="CE.1" type="xsd:string"/>
+    <xsd:element name="CE.2" type="xsd:string"/>
+    <xsd:element name="CE.3" type="xsd:string"/>
+    <xsd:element name="CE.4" type="xsd:string"/>
+    <xsd:element name="CE.5" type="xsd:string"/>
+    <xsd:element name="CE.6" type="xsd:string"/>
+    <xsd:complexType name="TQ">
+        		<xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.1"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.2"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.3"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.4"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.5"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.6"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.7"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.8"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.9"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.10"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.11"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="TQ.12"/>
+       		   </xsd:sequence>
+    		</xsd:complexType>
+    <xsd:element name="TQ.1" type="CQ_SubComponent"/>
+    <xsd:element name="TQ.2" type="RI_SubComponent"/>
+    <xsd:element name="TQ.3" type="ST"/>
+    <xsd:element name="TQ.4" type="TS_SubComponent"/>
+    <xsd:element name="TQ.5" type="TS_SubComponent"/>
+    <xsd:element name="TQ.6" type="ST"/>
+    <xsd:element name="TQ.7" type="ST"/>
+    <xsd:element name="TQ.8" type="TX"/>
+    <xsd:element name="TQ.9" type="ID"/>
+    <xsd:element name="TQ.10" type="OSD_SubComponent"/>
+    <xsd:element name="TQ.11" type="CE_SubComponent"/>
+    <xsd:element name="TQ.12" type="NM"/>
+    <xsd:complexType name="TS">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="TS_Group"/>
+    </xsd:complexType>
+    <xsd:complexType name="OSD">
+        <xsd:group dfdl:ref="ibmhl7:HL7Component" ref="OSD_Group"/>
+    </xsd:complexType>
+    <xsd:element name="OSD.1" type="ST"/>
+    <xsd:element name="OSD.2" type="ID"/>
+    <xsd:element name="OSD.3" type="ST"/>
+    <xsd:element name="OSD.4" type="ST"/>
+    <xsd:element name="OSD.5" type="IS"/>
+    <xsd:element name="OSD.6" type="ST"/>
+    <xsd:element name="OSD.7" type="NM"/>
+    <xsd:element name="OSD.8" type="ST"/>
+    <xsd:element name="OSD.9" type="ID"/>
+    <xsd:element name="OSD.10" type="ST"/>
+    <xsd:element name="OSD.11" type="ID"/>
+    <xsd:complexType name="ELD">
+    	  		<xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+	        		<xsd:element maxOccurs="1" minOccurs="0" ref="ELD.1"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="ELD.2"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="ELD.3"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="ELD.4"/>
+	            </xsd:sequence>
+    		</xsd:complexType>
+    <xsd:element name="ELD.1" type="ST"/>
+    <xsd:element name="ELD.2" type="NM"/>
+    <xsd:element name="ELD.3" type="NM"/>
+    <xsd:element name="ELD.4" type="CE_SubComponent"/>
+    <xsd:complexType name="SPS">
+	    	  <xsd:sequence dfdl:ref="ibmhl7:HL7Component">
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.1"/>
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.2"/>
+	            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SPS.3"/>
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.4"/>
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.5"/>
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.6"/>
+	            <xsd:element maxOccurs="1" minOccurs="0" ref="SPS.7"/>
+	        </xsd:sequence>
+    	  </xsd:complexType>
+    <xsd:element name="SPS.1" type="CWE_SubComponent"/>
+    <xsd:element name="SPS.2" type="CWE_SubComponent"/>
+    <xsd:element name="SPS.3" type="TX"/>
+    <xsd:element name="SPS.4" type="CWE_SubComponent"/>
+    <xsd:element name="SPS.5" type="CWE_SubComponent"/>
+    <xsd:element name="SPS.6" type="CWE_SubComponent"/>
+    <xsd:element name="SPS.7" type="CWE_SubComponent"/>
+    <xsd:group name="WVI_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="WVI.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="WVI.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="WVI_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="WVI_Group"/>
+    </xsd:complexType>
+    <xsd:group name="WVS_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="WVS.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="WVS.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="WVS_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="WVS_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CSU_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CSU.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.22"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CSU.23"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CSU_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CSU_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CCP_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CCP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CCP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CCP.3"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CCP_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CCP_Group"/>
+    </xsd:complexType>
+    <xsd:group name="NR_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NR.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="NR.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="NR_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="NR_Group"/>
+    </xsd:complexType>
+    <xsd:group name="MO_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MO.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MO.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="MO_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="MO_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CWE_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CWE.22"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CWE_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CWE_Group"/>
+    </xsd:complexType>
+    <xsd:group name="HD_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="HD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="HD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="HD.3"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="HD_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="HD_Group"/>
+    </xsd:complexType>
+    <xsd:group name="EI_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EI.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EI.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EI.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="EI.4"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="EI_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="EI_Group"/>
+    </xsd:complexType>
+    <xsd:group name="AD_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="AD.8"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="AD_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="AD_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CNN_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNN.11"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CNN_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CNN_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CNE_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CNE.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.5"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.6"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.7"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.8"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.9"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.11"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.12"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.13"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.14"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.15"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.16"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.17"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.18"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.19"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.21"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CNE.22"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CNE_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CNE_Group"/>
+    </xsd:complexType>
+    <xsd:group name="FN_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="FN.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="FN.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="FN.3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="FN.4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="FN.5"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="FN_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="FN_Group"/>
+    </xsd:complexType>
+    <xsd:group name="MOP_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="MOP.1"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="MOP.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="MOP.3"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="MOP_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="MOP_Group"/>
+    </xsd:complexType>
+    <xsd:group name="SAD_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SAD.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SAD.2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="SAD.3"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="SAD_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="SAD_Group"/>
+    </xsd:complexType>
+    <xsd:group name="DR_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DR.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="DR.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="DR_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="DR_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CQ_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CQ.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CQ.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CQ_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CQ_Group"/>
+    </xsd:complexType>
+    <xsd:group name="RI_Group">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RI.1"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="RI.2"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="RI_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="RI_Group"/>
+    </xsd:complexType>
+    <xsd:group name="TS_Group">
+        <xsd:sequence>
+            		<xsd:element minOccurs="0" name="TS.1" type="ST"/>
+            		<xsd:element minOccurs="0" name="TS.2" type="ST"/>
+        		</xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="TS_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="TS_Group"/>
+    </xsd:complexType>
+    <xsd:group name="OSD_Group">
+        <xsd:sequence>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.1"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.2"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.3"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.4"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.5"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.6"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.7"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.8"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.9"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.10"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="OSD.11"/>
+		        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="OSD_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="OSD_Group"/>
+    </xsd:complexType>
+    <xsd:group name="CE_Group">
+        <xsd:sequence>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.1"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.2"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.3"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.4"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.5"/>
+		            <xsd:element maxOccurs="1" minOccurs="0" ref="CE.6"/>
+       		   </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CE_SubComponent">
+        <xsd:group dfdl:ref="ibmhl7:HL7SubComponent" ref="CE_Group"/>
+    </xsd:complexType>
+</xsd:schema>

@@ -5,6 +5,8 @@ This GitHub repository holds DFDL schemas that model HL7 v2.7 healthcare message
 
 To download the repository go to http://dfdlschemas.github.com/HL7-v2.7/.
 
+These schemas are also available as part of the IBM Integration Bus Healthcare Pack (http://www-03.ibm.com/software/products/en/integration-bus-healthcare-pack). DFDL schemas for HL7 v2.5, 2.5.1 and 2.6 are available only in the IIB Healthcare Pack.
+
 HL7Format.xsd 
 -------------
 A DFDL schema that contains default values for DFDL properties that are suitable for HL7 v2.7 data.
